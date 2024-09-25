@@ -1,16 +1,17 @@
 package com.car.ecom_proj.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+//Entity and Model  are same
+//DAO  Repository  Maping DB   Extends JPA  Repository
+//DTO   FE sa Responce lata
+//
 @Entity
 @Data
 @AllArgsConstructor
@@ -27,8 +28,14 @@ public class Product {
     private int quantity;
     private BigDecimal price;
     private String category;
-    private String image;
+
+   // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate releaseDate;  // Use LocalDate for dates
     private boolean isAvailable;
+
+    private String imageName;
+    private String imageType;
+    @Lob
+    private byte[] imageBytes;
 
 }
