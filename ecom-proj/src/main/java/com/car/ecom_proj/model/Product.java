@@ -25,7 +25,7 @@ public class Product {
     private String name;
     private String description;
     private String brand;
-    private int quantity;
+    private int stockQuantity;
     private BigDecimal price;
     private String category;
 
@@ -35,7 +35,8 @@ public class Product {
 
     private String imageName;
     private String imageType;
-    @Lob
-    private byte[] imageBytes;
+    @Lob  //Large Obj
+    private byte[] imageDate;
+
 
 }
